@@ -6,31 +6,35 @@
 		<h1>Search VIP</h1>
 
 		<form action="search.php" method="post">
-			First three letters of VIP surname:  <input type="text" name="surname"></br>
-			Broadcast: 
-<?php
+			First three letters of VIP surname:  <input type="text" name="Surname"></br>
+			Broadcaster:
 
-	$db = new mysqli('localhost', 'user', 'passwd', 'tv_apps', NULL, '/run/mysqld/mysqld.sock');
+			<?php
 
-	if($db->connect_errno > 0){
-		die('Unable to connect to database [' . $db->connect_error . ']');
-	}
+				$db = new mysqli('localhost', 'user', 'passwd', 'tv_apps', NULL, '/run/mysqld/mysqld.sock');
 
-	$sql="SELECT Broadcaster FROM TV_CHANNEL;";
-
-	if(!$result = $db->query($sql)){
-		die('There was an error running the query [' . $db->error . ']');
-	}
-	
-	echo "<select name='Broadcaster'>";
-	while($row = $result->fetch_assoc()) {
-		echo "<option value=" . $row['Broadcaster'] . ">" . $row['Broadcaster'] . "</option>";
-	}
-	
-	echo "</select>";
-?>
+				if($db->connect_errno > 0){
+					die('Unable to connect to database [' . $db->connect_error . ']');
+				}
 
 
+				$sql="SELECT Broadcaster FROM TV_CHANNEL;";
+
+				if(!$result = $db->query($sql)){
+					die('There was an error running the query [' . $db->error . ']');
+				}
+
+
+				echo "<select name='Broadcaster'>";
+
+				while($row = $result->fetch_assoc()) {
+					echo '<option value="'.$row['Broadcaster'].'">'.$row['Broadcaster'].'</option>';
+				}
+				
+				echo "</select>";
+			?>
+
+			</br></br><input type="submit" value="Submit"> 
 		</form>
 
 	</body>
