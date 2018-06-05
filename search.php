@@ -19,7 +19,7 @@
 					
 		<?php
 
-			mysqli_report(MYSQLI_REPORT_ALL);			
+			//mysqli_report(MYSQLI_REPORT_ALL);			
 
 			$db = new mysqli('localhost', 'user', 'passwd', 'tv_apps', NULL, '/run/mysqld/mysqld.sock');
 
@@ -27,16 +27,7 @@
 				die('Unable to connect to database [' . $db->connect_error . ']');
 			}
 
-
-			$sql = $db->prepare("SELECT T.CodC, A.Date, A.StartTime, V.Surname, V.Name FROM APPEARANCE A, VIP V, TV_CHANNEL T WHERE A.Ssn = V.Ssn AND A.CodC = T.CodC AND T.Broadcaster = ? AND V.Surname LIKE \"?%\"");
-/*			echo $_POST["Broadcaster"];
-echo $_POST["Surname"];	*/
-			$one = "BroadCaster";
-			$two = "Rob";
-			if (!$sql->bind_param("ss", $one, $two)) {
-				echo "Binding params failed: (" . $sql->errno . ")" . $sql->error;
-			}
-			if(!$result = $db->query($sql)){
+			if(!$result = $db->query("SELECT T.CodC, A.Date, A.StartTime, V.Surname, V.Name FROM APPEARANCE A, VIP V, TV_CHANNEL T WHERE A.Ssn = V.Ssn AND A.CodC = T.CodC AND T.Broadcaster = \"{$_POST['Broadcaster']}\" AND V.Surname LIKE \"{$_POST['Surname']}%\"")){
 				die('There was an error running the query [' . $db->error . ']');
 			}
 
