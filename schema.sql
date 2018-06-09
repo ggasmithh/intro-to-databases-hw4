@@ -41,6 +41,7 @@ CREATE TABLE `APPEARANCE` (
 
 LOCK TABLES `APPEARANCE` WRITE;
 /*!40000 ALTER TABLE `APPEARANCE` DISABLE KEYS */;
+INSERT INTO `APPEARANCE` VALUES ('111-11-1111','2018-01-01','10:00:00','10:30:00','C3'),('222-22-2222','2018-02-03','20:00:00','20:02:00','C35'),('222-22-2222','2018-02-05','20:00:00','20:01:00','C35'),('FRRGSY79D57G273E','2016-12-01','19:00:00','20:55:00','C3'),('Test2','2016-12-02','19:01:00','20:56:00','C3'),('testagain1','2016-12-01','19:00:00','20:55:00','C35');
 /*!40000 ALTER TABLE `APPEARANCE` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,6 +93,7 @@ CREATE TABLE `VIP` (
 
 LOCK TABLES `VIP` WRITE;
 /*!40000 ALTER TABLE `VIP` DISABLE KEYS */;
+INSERT INTO `VIP` VALUES ('','','',0),('111-11-1111','Bob','Robertson',1),('222-22-2222','boB','nostreboR',0),('FRRGSY79D57G273E','Giusy','Ferreri',0),('Test2','Test2','Test2',1),('Test3','Test3','Test3',0),('Test4','Test4','Test4',1),('Test5','Test5','Test5',1),('testagain1','anothertest1','another one1',0),('testagain2','anothertest2','another one2',1),('yetanothertest','and another test','and another ',0);
 /*!40000 ALTER TABLE `VIP` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -104,4 +106,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-29 18:02:42
+-- Dump completed on 2018-06-09 22:41:46
