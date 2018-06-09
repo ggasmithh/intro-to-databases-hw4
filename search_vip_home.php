@@ -5,7 +5,7 @@
 	<body>
 		<h1>Search VIP</h1>
 
-		<form action="search.php" method="post">
+		<form action="search_vip_results.php" method="post">
 			First three letters of VIP surname:  <input type="text" name="Surname"></br>
 			Broadcaster:
 
