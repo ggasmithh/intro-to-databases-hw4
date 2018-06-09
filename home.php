@@ -34,7 +34,8 @@
 				echo "</select>";
 			?>
 
-			</br></br><input type="submit" value="Submit"> 
+			</br></br><input type='reset' value='Reset' name='reset'>
+			<input type="submit" value="Submit"> 
 		</form>
 
 	</body>
