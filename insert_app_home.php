@@ -4,6 +4,7 @@
 </head>
 <body>
 	<h1>Insert Appearance</h1>
+	<h2>Data for new Appearance</h2>
 
 <?php	
 
@@ -27,11 +28,30 @@
 
 
 ?>
-	<form action="insert_appearance.php" method="post">
-		SSN:		<input type="text" name="SSN"></br>
-		Name:		<input type="text" name="Name"></br>
-		Surname:	<input type="text" name="Surname"></br>
-		Employment:	<input type="text" name="Employment"></br>
+	<form action="insert_app_results.php" method="post">				
+	
+		<?php
+			echo "VIP:	<select name='VIP'>";
+
+			while($row = $result_vip->fetch_assoc()) {
+				echo '<option value="'.$row['Name'].'">'.$row['Name'].'</option>';
+			}
+				
+			echo "</select></br>";
+
+
+			echo "Channel:	<select name='Channel'>";
+			
+			while($row = $result_channel->fetch_assoc()) {
+				echo '<option value="'.$row['Name'].'">'.$row['Name'].'</option>';
+			}
+
+			echo "</select></br>";
+		?>	
+	
+		Date:		<input type="text" name="Date"></br>
+		Start Time:	<input type="text" name="StartTime"></br>
+		EndTime:	<input type="text" name="EndTime"></br>
 		
 		</br></br><input type='reset' value='Reset' name='reset'>
 		<input type="submit" value="Submit"> 
