@@ -5,19 +5,20 @@
 	<body>
 		<h1>TV Apperances of VIP</h1>
 		
-		<table>
-		<thead>
-			<tr>
-				<td>Channel Code</td>
-				<td>Date</td>
-				<td>Start Time</td>
-				<td>Surname</td>
-				<td>Name</td>
-			</tr>
-		</thead>
-		<tbody>
-					
 		<?php
+		if($_POST['Surname'] != '') {
+			echo '	<table>
+				<thead>
+					<tr>
+						<td>Channel Code</td>
+						<td>Date</td>
+						<td>Start Time</td>
+						<td>Surname</td>
+						<td>Name</td>
+					</tr>
+				</thead>
+				<tbody> ';
+					
 
 			//mysqli_report(MYSQLI_REPORT_ALL);			
 
@@ -43,6 +44,9 @@
 
 		<?php
 			}
+		}
+
+		else { echo 'ERROR: No part of surname specified'; }
 		?>
 
 		</tbody>
